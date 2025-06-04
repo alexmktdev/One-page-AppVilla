@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto One-Page - AppVilla</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    <!-- Header  -->
+    <!--
+         este incluye el logo , el navbar y 
+         en mobile first el logo y el menu hamburguesa
+    -->
+    <div class="bg-rose-400"> <!-- este div es para envolver el header + hero para darle el fondo del mismo color -->
+        <header class="flex items-center justify-between mx-6 p-5
+                       md:flex md:flex-row md:justify-center"> <!--para envolver el header (logo + menu hamburguesa en mobile) y en deskop (logo + navbar) -->
+                <!-- logo -->
+                <div class="cursor-pointer"> 
+                    <img class="w-35 h-12 md:w-40 md:h-15" src="./img/logo.png" alt="logo-appVilla">
+                </div>
+        
+                <!-- icono y menú hamburguesa -->        
+                <button class="block cursor-pointer md:hidden" id="menu-toggle">
+                    <!-- Ícono hamburguesa (3 líneas) -->
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                         viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                         <path d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+                
+                
+                   
+                <nav class="text-white  bg-rose-400 font-bold hidden w-full z-20 absolute top-11 left-0 flex flex-col items-center gap-3 p-5
+                           md:flex md:flex-row md:static md:justify-center md:w-[70rem] md:gap-15 cursor-pointer md:cursor-pointer"id="nav-menu">
+                           <!-- en la version destkop le puse md:Static para que no le afecte el absolute y el top-0 y el left que si lo use en la version mobile -->
+                        <a href="#"> Inicio</a>
+                        <a href="#"> Cualidades</a>
+                        <a href="#"> Descripcion</a>
+                        <a href="#"> Precios</a>
+                        <a href="#"> Equipo</a>
+                        <a href="#"> Blog</a>
+                        <a href="#"> Contacto</a>
+                        <a href="#" class="border-4 border-white p-3 rounded-xl hover:bg-white hover:text-rose-400"> Login / Sign</a>
+                </nav>                    
+        </header>
+
+
+        <!-- section hero -->
+        <section class="p-10 flex flex-col items-center justify-center gap-10
+                        md:flex md:flex-row md:items-center md:justify-center md:gap-[10rem]"> <!-- section Hero -->
+            <!-- creamos dos div, uno para los textos del hero y otro para la imagen -->
+             <!-- para los textos-->
+             <div class="text-center
+                         md:w-[26rem]">
+                <h2 class="text-white font-bold text-2xl md:text-[2.5rem]  mb-5">Una aplicación potente para tu negocio</h2>
+                <p class="text-white mb-6">Desde código abierto hasta servicios profesionales, le ayuda a crear, implementar, probar y supervisar aplicaciones.</p>
+                
+                    <a href="#" class="text-rose-400 bg-white rounded-xl block w-50 p-3 mx-auto mb-4 cursor-pointer 
+                                         md:inline-block md:p-4 md:mr-1 md:cursor-pointer hover:bg-black hover:text-white md:hover:bg-black md:hover:text-white">App Store</a>
+                    <a href="#" class="text-white border-4 border-white rounded-xl block w-50 p-3 mx-auto cursor-pointer 
+                                         md:inline-block md:border-4 md:cursor-pointer hover:bg-white hover:text-rose-400 md:hover:bg-white md:hover:text-rose-400">Google Play</a>
+                    
+             </div>
+
+             <!-- para la imagen-->
+             <div>
+                <img src="./img/hero.png" alt="imagen-hero">
+             </div>
+        </section>
+
+    </div>
+
+
+    <!-- esta seccion debo modificar los tamaños de letra para el modo desktop -->
+
+    
+                <!-- section - caracteristicas -->
+    <section class="p-11 flex flex-col items-center justify-center gap-10">
+            <!-- textos-->
+            <div class="text-center">
+                <h3 class="text-rose-400 text-xl font-bold mb-4 md:text-3xl md:mb-10 md:mt-10">Características</h3>
+                <p class="text-black font-bold text-2xl mb-4 md:text-4xl md:mb-10"> Su experiencia mejora cada vez más con el tiempo</p>
+                <p class="text-gray-400 md:text-xl">Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría han sufrido alteraciones de alguna forma.</p>
+            </div>
+    </section>
+
+
+    <!-- en esta seccion es simple debo hacer un grid  en desktop-->
+    <section class="flex flex-col items-center justify-center text-center p-8  gap-8
+                    md:grid md:grid-cols-3 md:px-[16rem] md:gap-20 md:max-w-[110rem] md:mx-auto"> <!-- grid con features -->
+            
+                <div class="bg-white shadow-xl rounded-xl p-6 text-sm"> <!-- grid 1-->
+                    <div class="bg-rose-400 h-12 w-12 mx-auto mb-4 rounded-[0.6rem]"></div>
+                    <h3 class="text-black font-bold mb-4 text-xl">Push to Deploy</h3>
+                    <p class="text-gray-400">It is a long established fact that a reader will be distracted by the readable content of a page at its layout.</p>
+                </div>
+
+                <div class="bg-white shadow-xl rounded-xl p-6 text-sm"> <!-- grid 2-->
+                    <div class="bg-rose-400 h-12 w-12 mx-auto mb-4 rounded-[0.6rem]"></div>
+                    <h3 class="text-black font-bold mb-4 text-xl">SSL Certificates</h3>
+                    <p class="text-gray-400">It is a long established fact that a reader will be distracted by the readable content of a page at its layout.</p>
+                </div>
+
+                <div class="bg-white shadow-xl rounded-xl p-6 text-sm"> <!-- grid 3-->
+                    <div class="bg-rose-400 h-12 w-12 mx-auto mb-4 rounded-[0.6rem]"></div>
+                    <h3 class="text-black font-bold mb-4 text-xl">Simple Queues</h3>
+                    <p class="text-gray-400">It is a long established fact that a reader will be distracted by the readable content of a page at its layout.</p>
+                </div>
+
+                <div class="bg-white shadow-xl rounded-xl p-6 text-sm"> <!-- grid 4-->
+                    <div class="bg-rose-400 h-12 w-12 mx-auto mb-4 rounded-[0.6rem]"></div>
+                    <h3 class="text-black font-bold mb-4 text-xl">Advanced Security</h3>
+                    <p class="text-gray-400">It is a long established fact that a reader will be distracted by the readable content of a page at its layout.</p>
+                </div>
+
+                <div class="bg-white shadow-xl rounded-xl p-6 text-sm"> <!-- grid 5-->
+                    <div class="bg-rose-400 h-12 w-12 mx-auto mb-4 rounded-[0.6rem]"></div>
+                    <h3 class="text-black font-bold mb-4 text-xl">Powerful API</h3>
+                    <p class="text-gray-400">It is a long established fact that a reader will be distracted by the readable content of a page at its layout.</p>
+                </div>
+
+                <div class="bg-white shadow-xl rounded-xl p-6 text-sm"> <!-- grid 6-->
+                    <div class="bg-rose-400 h-12 w-12 mx-auto mb-4 rounded-[0.6rem]"></div>
+                    <h3 class="text-black font-bold mb-4 text-xl">Database Backups</h3>
+                    <p class="text-gray-400">It is a long established fact that a reader will be distracted by the readable content of a page at its layout.</p>
+                </div>
+            
+    </section>
+
+
+    <!-- usuarios app -->
+    <section class="bg-rose-400 text-white p-14 flex flex-col items-center justify-center gap-20
+                    md:flex md:flex-row md:items-center md:justify-center md:gap-[10rem] md:w-full">
+
+        <div class="flex flex-col items-center justify-center text-center md:max-w-[30rem]">
+            <div class="bg-slate-200 h-16 w-16 mx-auto mb-4 rounded-[0.6rem]"></div>
+            <h3 class="text-white font-bold text-2xl mb-6">1,25,000 Customers Using The Application!</h3>
+            <p class="text-sm text-white font-bold mb-8">Collaborate over projects with your team and clients optimised for mobile and tablet 
+                don't let slow page speeds drive our innovative platform empowers anyone to convert 
+                clicks ou'll publish your first landing page in minutes.
+            </p>
+            <a class="text-rose-400 bg-white px-10 py-5 rounded-xl hover:bg-black hover:text-white md:hover:bg-black md:hover:text-white" href="#">Get Started</a>
+        </div>
+
+        <!-- imagen de la app -->
+        <div>
+            <img class="rounded-xl shadow-2xl" src="./img/imagen2-1.png" alt="imagen-2_app">
+
+        </div>
+
+    </section>
+
+
+    <section class="bg-rose-400 text-rose-400 p-14 flex flex-col items-center justify-center gap-20
+                   md:flex md:flex-row md:items-center md:justify-center md:gap-[10rem] md:w-full">
+        <div>
+            <img class="rounded-xl shadow-2xl" src="./img/img3.png" alt="imagen-2_app">
+
+        </div>
+
+        <div class="flex flex-col items-center justify-center text-center md:max-w-[30rem]">
+            <div class="bg-slate-200 h-16 w-16 mx-auto mb-4 rounded-[0.6rem]"></div>
+            <h3 class="text-white font-bold text-2xl mb-6">Seamless Loyalty</h3>
+            <p class="text-sm text-white font-bold mb-8">Collaborate over projects with your 
+                       team and clients optimised for mobile and tablet don't let slow page speeds drive our 
+                       innovative platform empowers anyone to convert clicks ou'll publish your first landing page in minutes.
+            </p>
+            <a class="text-rose-400 bg-white px-10 py-5 rounded-xl hover:bg-black hover:text-white md:hover:bg-black md:hover:text-white" href="#">Get Started</a>
+        </div>
+
+    </section>
+
+    <!-- satisfaction-->
+    <section class="flex flex-col items-center justify-center text-center p-20 gap-10 ">
+        <div>
+            <h3 class="text-rose-400 font-bold text-xl mb-5
+                      md:text-4xl md:mb-10 md:mt-10">Trusted by developers from over 80 planets</h3>
+            <p class="text-black text-sm  md:text-xl md:mb-10">There are many variations of passages of Lorem Ipsum available, but the majority.</p>
+        </div>
+ 
+        <div class="flex flex-col gap-5 md:flex md:flex-row md:gap-40">
+            <div class="text-rose-400 font-bold"> <p class="text-3xl">100%</p> <p class="font-bold">Satisfaction</p></div>
+            <div class="text-rose-400 font-bold"><p class="text-3xl">120k</p>  <p class="font-bold">Happy Users</p></div>
+            <div class="text-rose-400 font-bold"><p class="text-3xl">125k+</p> <p class="font-bold">Downloads</p></div>
+        </div>
+    </section>
+
+
+    <!-- pricing-->
+    <section class="p-11 flex flex-col items-center justify-center gap-10 mb-6">
+        <!-- textos-->
+        <div class="text-center">
+            <h3 class="text-rose-400 text-xl  mb-4 md:text-2xl md:mb-5 md:mt-10">Precios</h3>
+            <p class="text-black font-bold text-2xl mb-4 md:text-4xl md:mb-10">Plan de Precios</p>
+            <p class="text-gray-400 md:text-xl">Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría han sufrido alteraciones de alguna forma.</p>
+        </div>
+    </section>
+
+    <!-- tarjetas de precios -->
+     <div class="flex flex-col items-center justify-center  text-center
+                 md:grid md:grid-cols-2 max-w-[55rem] mx-auto ">
+            <div class="flex flex-col items-center justify-center gap-5 bg-slate-50 p-10 rounded-xl shadow-xl m-10">
+                <h3 class="font-bold uppercase">Hobby</h3>
+                <p class="text-gray-500">All the basics for starting a new business</p>
+                <p class="text-gray-500"> <span class="font-bold text-4xl text-black">$12</span>/mo</p>
+                <a class="w-full bg-black text-white py-3 rounded-xl hover:bg-gray-500 hover:text-white" href="#">Buy Hobby</a>
+
+                <h3 class="font-bold uppercase">What's Included</h3>
+                <p class="text-gray-500">Cras justo odio.</p>
+                <p class="text-gray-500">Dapibus ac facilisis in.</p>
+                <p class="text-gray-500">Morbi leo risus.</p>
+                <p class="text-gray-500">Potenti felis, in cras ligula.</p>
+            </div>
+
+
+            <div class="flex flex-col items-center justify-center gap-5 bg-slate-50 p-10 rounded-xl shadow-xl m-10">
+                <h3 class="font-bold uppercase">Freelancer</h3>
+                <p class="text-gray-500">All the basics for starting a new business</p>
+                <p class="text-gray-500"> <span class="font-bold text-4xl text-black">$24</span>/mo</p>
+                <a class="w-full bg-black text-white py-3 rounded-xl hover:bg-gray-500 hover:text-white" href="#">Buy Freelancer</a>
+
+                <h3 class="font-bold uppercase">What's Included</h3>
+                <p class="text-gray-500">Cras justo odio.</p>
+                <p class="text-gray-500">Dapibus ac facilisis in.</p>
+                <p class="text-gray-500">Morbi leo risus.</p>
+                <p class="text-gray-500">Potenti felis, in cras ligula.</p>
+
+            </div>
+
+
+            <div class="flex flex-col items-center justify-center gap-5 bg-slate-50 p-10 rounded-xl shadow-xl m-10">
+                <h3 class="font-bold uppercase">Startup</h3>
+                <p class="text-gray-500">All the basics for starting a new business</p>
+                <p class="text-gray-500"> <span class="font-bold text-4xl text-black">$32</span>/mo</p>
+                <a class="w-full bg-black text-white py-3 rounded-xl hover:bg-gray-500 hover:text-white" href="#">Buy Startup</a>
+
+                <h3 class="font-bold text-black uppercase">What's Included</h3>
+                <p class="text-gray-500">Cras justo odio.</p>
+                <p class="text-gray-500">Dapibus ac facilisis in.</p>
+                <p class="text-gray-500">Morbi leo risus.</p>
+                <p class="text-gray-500">Potenti felis, in cras ligula.</p>
+
+            </div>
+
+
+            <div class="flex flex-col items-center justify-center gap-5 bg-slate-50 p-10 rounded-xl shadow-xl m-10">
+                <h3 class="font-bold uppercase">Enterprise</h3>
+                <p class="text-gray-500">All the basics for starting a new business</p>
+                <p class="text-gray-500"> <span class="font-bold text-4xl text-black">$48</span>/mo</p>
+                <a class="w-full bg-black text-white py-3 rounded-xl hover:bg-gray-500 hover:text-white" href="#">Buy Enterprise</a>
+
+                <h3 class="font-bold uppercase">What's Included</h3>
+                <p class="text-gray-500">Cras justo odio.</p>
+                <p class="text-gray-500">Dapibus ac facilisis in.</p>
+                <p class="text-gray-500">Morbi leo risus.</p>
+                <p class="text-gray-500">Potenti felis, in cras ligula.</p>
+            </div>
+     </div>
+
+
+     <!-- hay que hacer animaciones con scaling y etc 
+          se hara la seccion teams, reseñas (Carousel) y footer 
+          ademas del login y el contacto -->
+
+     <!-- animacion de entrada con una libreria de javscript que hay para 
+          varios componentes que tengo en la web -->
+
+
+    <!-- section equipos -->
+    <section class="p-11 flex flex-col items-center justify-center gap-10 mb-6">
+        <!-- textos-->
+        <div class="text-center">
+            <h3 class="text-rose-400 text-xl  mb-4 md:text-2xl md:mb-5 md:mt-10">Equipo</h3>
+            <p class="text-black font-bold text-2xl mb-4 md:text-4xl md:mb-10">Equipo de desarrollo</p>
+            <p class="text-gray-400 md:text-xl">Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría han sufrido alteraciones de alguna forma.</p>
+        </div>
+    </section>
+
+    <!-- cards de equipos -->
+    <div class="flex flex-col items-center justify-center
+                md:flex md:flex-row md:justify-center md:items-center md:gap-20">
+        
+    
+        <div class="flex flex-col items-center justify-center max-w-80  bg-slate-200 rounded-t-xl mb-10 shadow-xl">
+                
+                    <img class="mb-5 rounded-t-xl" src="./img/dev1.png" alt="dev-1">
+                    <h3 class="font-bold text-black text-xl mb-3"> Leonard Krasner</h3>
+                    <p class="font-bold text-rose-400 p-5">Diseñador UX/UI Senior</p>
+        </div>
+
+        <div class="flex flex-col items-center justify-center w-full max-w-80 bg-slate-200 rounded-t-xl mb-10 shadow-xl">
+                
+            <img class="mb-5 w-full rounded-t-xl" src="./img/dev2.png" alt="dev-1">
+            <h3 class="font-bold text-black text-xl mb-2"> Jack Smith</h3>
+            <p class="font-bold text-rose-400 p-5">Backend Developer Senior</p>
+        </div>
+
+        <div class="flex flex-col items-center justify-center w-full max-w-80 bg-slate-200 rounded-t-xl mb-10 shadow-xl">
+                
+            <img class="mb-5 w-full rounded-t-xl" src="./img/dev3.png" alt="dev-1">
+            <h3 class="font-bold text-black text-xl mb-2"> Nickolay Betford</h3>
+            <p class="font-bold text-rose-400 p-5">Mobile Developer Senior</p>
+        </div>
+    </div>
+
+
+    <!-- Carousel  -->
+    <div id="carousel" class="overflow-hidden relative w-full mt-20 mb-20 md:mb-20">
+            <h3 class="text-3xl font-bold text-rose-400 text-center mb-7">Testimonials</h3>
+            <!-- Inner wrapper (flex horizontal) -->
+            <div id="carouselInner" class="flex transition-transform duration-500 ease-in-out">
+            <!-- Slide 1 -->
+            <div class="w-full flex-shrink-0 p-6 text-center  mx-auto">
+                <img class="w-60 h-60 mx-auto rounded-full mb-5" src="./img/foto1.png" alt="dev1-opinion">
+                <p class="text-lg italic mb-2 px-20">"Esta app cambió mi vida, súper intuitiva y rápida."</p>
+                <span class="font-semibold">– John P.</span>
+            </div>
+            <!-- Slide 2 -->
+            <div class="w-full flex-shrink-0 p-6 text-center">
+                <img class="w-60 h-60 mx-auto rounded-full mb-5" src="./img/foto2.png" alt="dev2-opinion">
+                <p class="text-lg italic mb-2 px-20">"Me ayudó a organizar todo en minutos. ¡La recomiendo 100%!"</p>
+                <span class="font-semibold">– Scarlet R.</span>
+            </div>
+            <!-- Slide 3 -->
+            <div class="w-full flex-shrink-0 p-6 text-center">
+                <img class="w-60 h-60 mx-auto rounded-full mb-5" src="./img/foto3.png" alt="dev3-opinion">
+                <p class="text-lg italic mb-2 px-20">"Una interfaz muy limpia y fácil de usar. ¡Excelente trabajo!"</p>
+                <span class="font-semibold">– Alice V.</span>
+            </div>
+            </div>
+        
+            <!-- Dots -->
+            <div class="flex justify-center mt-4 space-x-2">
+            <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600 transition" data-slide="0"></button>
+            <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600 transition" data-slide="1"></button>
+            <button class="dot w-3 h-3 rounded-full bg-gray-400 hover:bg-gray-600 transition" data-slide="2"></button>
+            </div>
+    </div>
+
+
+    <!-- Footer -->
+          <!-- Footer -->
+
+    <footer class="bg-gray-800 pb-10 md:pb-10">
+        <div class=" text-white flex flex-col justify-center items-center gap-12  md:py-20 md:flex md:flex-row  md:justify-between md:px-20 mb-20">
+            <div class="flex flex-col items-center justify-center p-20 text-center gap-8 md:max-w-[30rem]">
+               <img class="w-40 h-14 rounded-xl"  src="./img/logo.png" alt="logo">
+               <p class="px-5">Making the world a better place through constructing elegant hierarchies.</p>
+               <p class="px-5">Designed and Developed by UIdeck</p>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-4">
+                <h3 class="font-bold text-rose-300 text-2xl">Solutions</h3>
+                <p class="text-white">Marketing</p>
+                <p class="text-white">Analytics</p>
+                <p class="text-white">Commerce</p>
+                <p class="text-white">Insights</p>
+                <p class="text-white">Promotion</p>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-4">
+                <h3 class="font-bold text-rose-300 text-2xl">Support</h3>
+                <p class="text-white">Pricing</p>
+                <p class="text-white">Documentation</p>
+                <p class="text-white">Guides</p>
+                <p class="text-white">API Status</p>
+                <p class="text-white">Live Support</p>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-4">
+                <h3 class="font-bold text-rose-300 text-2xl">Company</h3>
+                <p class="text-white">About US</p>
+                <p class="text-white">Our blog</p>
+                <p class="text-white">Jobs</p>
+                <p class="text-white">Press</p>
+                <p class="text-white">Contact Us</p>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-4">
+                <h3 class="font-bold text-rose-300 text-2xl">Legal</h3>
+                <p class="text-white">Terms & Conditions</p>
+                <p class="text-white">Privacy Policy</p>
+                <p class="text-white">Catering Services</p>
+                <p class="text-white">Customer Relations</p>
+                <p class="text-white">Innovation</p>
+            </div>
+        </div>
+
+
+        <div class="border-4 border-gray-500 mx-15 rounded-xl flex flex-col justify-center items-center gap-8 p-8
+                    md:flex md:flex-row md:max-w-[80rem] md:mx-auto md:-mt-30 md:gap-20">
+            <div class="flex flex-col justify-center items-center gap-8">
+                <h3 class="font-bold text-white text-center">Subscribe to our newsletter</h3>
+                <p class="text-white text-center md:max-w-80">The latest news, articles, and resources, sent to your inbox weekly.</p>
+            </div>
+            
+            <div class="flex flex-col justify-center items-center gap-4 md:flex md:flex-row md:gap-5">
+                <input class="bg-gray-500 py-4 px-12 md:px-30 text-white rounded-xl text-xs text-center" type="text" placeholder="Your email address">
+                <a class="bg-red-400 py-4 px-21 text-white rounded-xl text-xs" href="#">Subscribe</a>
+            </div>
+            
+
+        </div>
+
+
+        <p class="text-center font-bold text-white mt-10 p-6 max-w-[20rem] mx-auto">Todos los derechos reservados Alexander Ruiz Poblete</p>
+
+    
+    </footer>
+
+
+  
+    <!-- Script para el carousel-->
+    <script>
+        const carouselInner = document.getElementById('carouselInner');
+        const dots = document.querySelectorAll('.dot');
+    
+        dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const index = parseInt(dot.getAttribute('data-slide'));
+            carouselInner.style.transform = `translateX(-${index * 100}%)`;
+    
+            dots.forEach(d => d.classList.remove('bg-blue-500'));
+            dot.classList.add('bg-blue-500');
+        });
+        });
+    
+        // Set first dot active on load
+        dots[0].classList.add('bg-blue-500');
+    </script>
+  
+    <!-- Script para el menu hamburguesa -->
+    <script>
+        // Toggle del menú en modo móvil
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+          const menu = document.getElementById('nav-menu');
+          menu.classList.toggle('hidden'); // si el menu (nav-menu en mi html) tiene la clase hidden se la quita , Si el menú no tiene la clase hidden, se la pone (y se oculta).
+          // con classlit selecciona o elige para manipular el elemento css(hidden en este caso) y con toggle agrega o quita la clase al hacer click 
+        });
+      </script>
+
+  
+    
+</body>
+</html>
